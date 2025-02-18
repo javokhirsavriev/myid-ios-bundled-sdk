@@ -1,0 +1,11 @@
+framework module MyIdBundledSDK {
+  umbrella header "MyIdBundledSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module MyIdBundledSDK.Swift {
+  header "MyIdBundledSDK-Swift.h"
+  requires objc
+}

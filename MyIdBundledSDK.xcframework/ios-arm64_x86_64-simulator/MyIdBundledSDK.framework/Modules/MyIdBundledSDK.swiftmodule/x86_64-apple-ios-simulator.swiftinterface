@@ -1,0 +1,216 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MyIdBundledSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AVFoundation
+import CoreImage.CIFilterBuiltins
+import Combine
+import CommonCrypto
+import Compression
+import CoreImage
+import CoreVideo
+import CryptoKit
+import DeveloperToolsSupport
+import Foundation
+import LocalAuthentication
+@_exported import MyIdBundledSDK
+import Security
+import Swift
+import SwiftUI
+import UIKit
+import Vision
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc public enum MyIdPresentationStyle : Swift.Int {
+  case FULL = 0
+  case SHEET
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum MyIdCameraShape : Swift.Int {
+  case ELLIPSE = 0
+  case CIRCLE
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class MyIdAppearance : ObjectiveC.NSObject {
+  @objc public var primaryColor: UIKit.UIColor?
+  @objc public var errorColor: UIKit.UIColor?
+  @objc public var primaryButtonColor: UIKit.UIColor?
+  @objc public var primaryButtonColorDisabled: UIKit.UIColor?
+  @objc public var primaryButtonTextColor: UIKit.UIColor?
+  @objc public var primaryButtonTextColorDisabled: UIKit.UIColor?
+  @objc public var buttonCornerRadius: Swift.Float
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol MyIdClientDelegate {
+  @objc func onSuccess(result: MyIdBundledSDK.MyIdResult)
+  @objc func onError(exception: MyIdBundledSDK.MyIdException)
+  @objc func onUserExited()
+}
+@_inheritsConvenienceInitializers @objc public class MyIdGenerator : ObjectiveC.NSObject {
+  @objc public class func hash(payload: Swift.String, clientHash: Swift.String, clientHashId: Swift.String) -> Swift.String?
+  @objc public class func device() -> Swift.String
+  @objc public class func deviceModel() -> Swift.String?
+  @objc public class func deviceName() -> Swift.String?
+  @objc public class func systemName() -> Swift.String?
+  @objc public class func systemVersion() -> Swift.String?
+  @objc public class func isPhone() -> Swift.Bool
+  @objc public class func isPad() -> Swift.Bool
+  @objc public class func isSimulator() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum MyIdCameraSelector : Swift.Int {
+  case FRONT = 0
+  case BACK
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum MyIdEntryType : Swift.Int {
+  case AUTH = 0
+  case FACE
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum MyIdLocale : Swift.Int {
+  case RU = 0
+  case EN
+  case UZ
+  case KY
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum MyIdDocumentType : Swift.Int {
+  case ID_CARD = 0
+  case PASSPORT
+  case DRIVER_LICENSE
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class MyIdOrganizationDetails : ObjectiveC.NSObject {
+  @objc public var phoneNumber: Swift.String?
+  @objc public var logo: UIKit.UIImage?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum MyIdResolution : Swift.Int {
+  case RESOLUTION_480 = 0
+  case RESOLUTION_720
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class MyIdClient : ObjectiveC.NSObject {
+  @objc public class func start(withConfig config: MyIdBundledSDK.MyIdConfig, withDelegate delegate: any MyIdBundledSDK.MyIdClientDelegate)
+  @objc public class func run(withConfig config: MyIdBundledSDK.MyIdConfig, withDelegate delegate: any MyIdBundledSDK.MyIdClientDelegate) -> UIKit.UIViewController
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum MyIdBuildMode : Swift.Int {
+  case DEBUG = 0
+  case PRODUCTION
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension Swift.String : Swift.Error {
+}
+@_inheritsConvenienceInitializers @objc public class MyIdResult : ObjectiveC.NSObject {
+  @objc public var image: UIKit.UIImage?
+  @objc public var code: Swift.String?
+  @objc public var comparisonValue: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum MyIdResidency : Swift.Int {
+  case USER_DEFINED = 0
+  case RESIDENT
+  case NON_RESIDENT
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class MyIdException : ObjectiveC.NSObject {
+  @objc public var message: Swift.String?
+  @objc public var code: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class MyIdConfig : ObjectiveC.NSObject {
+  @objc public var clientId: Swift.String?
+  @objc public var clientHash: Swift.String?
+  @objc public var clientHashId: Swift.String?
+  @objc public var passportData: Swift.String?
+  @objc public var dateOfBirth: Swift.String?
+  @objc public var minAge: Swift.Int
+  @objc public var sdkHash: Swift.String?
+  @objc public var externalId: Swift.String?
+  @objc public var threshold: Swift.Float
+  @objc public var buildMode: MyIdBundledSDK.MyIdBuildMode
+  @objc public var entryType: MyIdBundledSDK.MyIdEntryType
+  @objc public var residency: MyIdBundledSDK.MyIdResidency
+  @objc public var locale: MyIdBundledSDK.MyIdLocale
+  @objc public var cameraShape: MyIdBundledSDK.MyIdCameraShape
+  @objc public var resolution: MyIdBundledSDK.MyIdResolution
+  @objc public var cameraSelector: MyIdBundledSDK.MyIdCameraSelector
+  @objc public var presentationStyle: MyIdBundledSDK.MyIdPresentationStyle
+  @objc public var organizationDetails: MyIdBundledSDK.MyIdOrganizationDetails?
+  @objc public var appearance: MyIdBundledSDK.MyIdAppearance?
+  @objc public var distance: Swift.Float
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension MyIdBundledSDK.MyIdPresentationStyle : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdPresentationStyle : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdPresentationStyle : Swift.RawRepresentable {}
+extension MyIdBundledSDK.MyIdCameraShape : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdCameraShape : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdCameraShape : Swift.RawRepresentable {}
+extension MyIdBundledSDK.MyIdCameraSelector : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdCameraSelector : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdCameraSelector : Swift.RawRepresentable {}
+extension MyIdBundledSDK.MyIdEntryType : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdEntryType : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdEntryType : Swift.RawRepresentable {}
+extension MyIdBundledSDK.MyIdLocale : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdLocale : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdLocale : Swift.RawRepresentable {}
+extension MyIdBundledSDK.MyIdDocumentType : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdDocumentType : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdDocumentType : Swift.RawRepresentable {}
+extension MyIdBundledSDK.MyIdResolution : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdResolution : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdResolution : Swift.RawRepresentable {}
+extension MyIdBundledSDK.MyIdBuildMode : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdBuildMode : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdBuildMode : Swift.RawRepresentable {}
+extension MyIdBundledSDK.MyIdResidency : Swift.Equatable {}
+extension MyIdBundledSDK.MyIdResidency : Swift.Hashable {}
+extension MyIdBundledSDK.MyIdResidency : Swift.RawRepresentable {}
